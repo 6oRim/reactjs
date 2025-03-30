@@ -15,6 +15,12 @@
   </body>
   <script>
     const root = document.querySelector("#root");
+    const Title = (
+      <h3 id="title" onMouseEnter={() => console.log("Mouse Entered!")}>
+        Hello I'm a title
+      </h3>
+    );
+    /*
     const h3 = React.createElement(
       "h3",
       {
@@ -23,6 +29,7 @@
       },
       "Total Clicks: 0"
     );
+    */
     const btn = React.createElement(
       "button",
       {
@@ -32,6 +39,6 @@
       "Click Me!"
     );
     const container = React.createElement("div", null, [h3, btn]);
-    ReactDOM.render(container, root);
+    ReactDOM.render(Title, root);
   </script>
 </html>
