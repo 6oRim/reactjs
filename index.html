@@ -12,27 +12,23 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       const root = document.querySelector("#root");
-      const Title = () => (
-        <h3 id="title" onMouseEnter={() => console.log("entered!")}>
-          Hello I'm a title
-        </h3>
-      );
-      const BUTTON = () => (
-        <button
-          style={{ backgroundColor: "tomato" }}
-          onClick={() => console.log("clicked!")}
-        >
-          Click me
-        </button>
-      );
-
-      const Container = () => (
-        <div>
-          <Title />
-          <BUTTON />
-        </div>
-      );
-      ReactDOM.render(<Container />, root);
+      let counter = 0;
+      function countUp() {
+        counter = counter + 1;
+        render();
+      }
+      function render() {
+        ReactDOM.render(<Container />, root);
+      }
+      function Container() {
+        return (
+          <div>
+            <h3>Total Clicks: {counter}</h3>
+            <button onClick={countUp}>Click me</button>
+          </div>
+        );
+      }
+      render();
     </script>
   </head>
   <body>
